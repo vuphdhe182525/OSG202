@@ -1,0 +1,14 @@
+import email  
+import smtplib
+import re
+import getpass
+import imaplib
+from email.message import EmailMessage
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+# Hàm nhập tên người dùng và mật khẩu từ bàn phím
+def get_email_credentials():
+    imap_username = input("Nhập tên người dùng (email): ")
+    imap_password = input("Nhập mật khẩu (email): ")
+    return imap_username, imap_password
