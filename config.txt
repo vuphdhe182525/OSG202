@@ -4,5 +4,6 @@ Emergency: Acknowledged. I'll get back to you as soon as possible.
 Alert: I've received your email and will reply shortly.
 Promotion: Appreciate your suggestion! I'll look into it.
 Sale: Thanks for reaching out! I'll review your suggestion.
-
+Discount: Your email is noted. I'll check it out soon.
+Promotion: Thank you for your message. I'll explore your suggestion shortly.
 
