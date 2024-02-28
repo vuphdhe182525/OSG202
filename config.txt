@@ -22,3 +22,10 @@ Urgent: Thank you for contacting me. I'll reply as soon as possible.
 Important: Your email is important to me. I'll respond promptly.
 Emergency: Acknowledged. I'll reply to you promptly.
 Alert: I've received your email and will respond shortly.
+Promotion: Thanks for your suggestion! I'll consider it.
+Sale: I'll take a look at your suggestion. Thank you!
+Discount: Noted. I'll review your suggestion shortly.
+Promotion: Received your email. I'll check out your suggestion.
+Sale: I'll take a look at your suggestion. Thank you!
+Discount: Noted. I'll review your suggestion shortly.
+Promotion: Received your email. I'll check out your suggestion.
