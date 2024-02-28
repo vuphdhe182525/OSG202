@@ -6,4 +6,15 @@ Promotion: Appreciate your suggestion! I'll look into it.
 Sale: Thanks for reaching out! I'll review your suggestion.
 Discount: Your email is noted. I'll check it out soon.
 Promotion: Thank you for your message. I'll explore your suggestion shortly.
-
+Sale: I've received your email and will consider your suggestion.
+Discount: Thanks for getting in touch! I'll take a look at your suggestion.
+Urgent: I've received your email and will respond as soon as possible.
+Important: Thank you for reaching out. I'll reply promptly.
+Emergency: Noted. I'll get back to you shortly.
+Alert: Your email has been received, and I'll respond promptly.
+Promotion: I appreciate your input! I'll investigate further.
+Sale: Thanks for your email. I'll consider your suggestion.
+Discount: Your message is received. I'll examine your suggestion.
+Promotion: Received your email. I'll look into your suggestion.
+Sale: Thank you for your message. I'll review your suggestion.
+Discount: Noted. I'll take a look at your suggestion soon.
