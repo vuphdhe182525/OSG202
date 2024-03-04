@@ -41,3 +41,7 @@ def send_auto_response(sender_email, response):
     smtp_password = imap_password
     smtp_from = smtp_username
     smtp_to = sender_email
+
+# Soạn email phản hồi tự động
+    subject = 'Phản hồi tự động'
+    body = response
