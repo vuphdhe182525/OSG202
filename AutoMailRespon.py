@@ -58,3 +58,13 @@ def send_auto_response(sender_email, response):
         server.starttls()
         server.login(smtp_username, smtp_password)
         server.send_message(msg)
+
+def count_total_emails(imap_server, username, password):
+    mail = imaplib.IMAP4_SSL(imap_server)
+    mail.login(username, password)
+    mail.select('inbox')
+    result, data = mail.search(None, 'ALL')
+    if result == 'OK':
+        return len(data[0].split())
+    else:
+        return 0
