@@ -88,3 +88,8 @@ new_emails_info = []
 print("Các email mới đến:")
 
 while True:
+
+# Đếm tổng số email trong hộp thư đến hiện tại
+total_emails_current = count_total_emails(imap_server, imap_username, imap_password)
+
+
