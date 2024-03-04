@@ -31,3 +31,13 @@ def match_pattern(email_subject, patterns):
         if re.search(pattern, email_subject, re.IGNORECASE):
             return response
     return None
+
+# Hàm gửi phản hồi tự động
+def send_auto_response(sender_email, response):
+    # Thiết lập thông tin tài khoản email của bạn
+    smtp_server = 'smtp.gmail.com'
+    smtp_port = 587  # Gmail sử dụng cổng 587
+    smtp_username = imap_username
+    smtp_password = imap_password
+    smtp_from = smtp_username
+    smtp_to = sender_email
