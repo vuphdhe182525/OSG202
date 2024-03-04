@@ -45,3 +45,11 @@ def send_auto_response(sender_email, response):
 # Soạn email phản hồi tự động
     subject = 'Phản hồi tự động'
     body = response
+
+# Tạo đối tượng EmailMessage
+    msg = EmailMessage()
+    msg['From'] = smtp_from
+    msg['To'] = smtp_to
+    msg['Subject'] = subject
+    msg.set_content(body)
+
