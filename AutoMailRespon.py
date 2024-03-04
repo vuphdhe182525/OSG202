@@ -68,9 +68,14 @@ def count_total_emails(imap_server, username, password):
         return len(data[0].split())
     else:
         return 0
+        
 # Thiết lập thông tin tài khoản email của bạn
 imap_server = 'imap.gmail.com'
 imap_username, imap_password = get_email_credentials()
+
 # Đọc tệp cấu hình
 config_file = '/home/kali/Downloads/config.txt'
 patterns = read_config(config_file)
+
+# Đếm tổng số email trong hộp thư đến ban đầu
+total_emails_initial = count_total_emails(imap_server, imap_username, imap_password)
