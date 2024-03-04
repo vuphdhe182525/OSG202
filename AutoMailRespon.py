@@ -21,3 +21,13 @@ def read_config(filename):
             key, value = line.strip().split(':')
             patterns[key.strip()] = value.strip()
     return patterns
+
+# Hàm kiểm tra xem email có khớp với mẫu nào trong từ điển không
+def match_pattern(email_subject, patterns):
+    # Chuyển đổi tiêu đề email và mẫu về chữ thường
+    email_subject_lower = email_subject.lower()
+
+    for pattern, response in patterns.items():
+        if re.search(pattern, email_subject, re.IGNORECASE):
+            return response
+    return None
