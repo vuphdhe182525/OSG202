@@ -92,4 +92,8 @@ while True:
 # Đếm tổng số email trong hộp thư đến hiện tại
 total_emails_current = count_total_emails(imap_server, imap_username, imap_password)
 
-
+ # Nếu số email trong hộp thư không thay đổi
+    if total_emails_current == total_emails_initial:
+        # Chờ thêm 60 giây
+        time.sleep(60)
+        continue
