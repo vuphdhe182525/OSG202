@@ -82,3 +82,9 @@ total_emails_initial = count_total_emails(imap_server, imap_username, imap_passw
 
 # Chờ 30 giây trước khi bắt đầu vòng lặp
 time.sleep(30)
+
+# Khởi tạo danh sách lưu trữ thông tin về các email mới (ở mức độ toàn cục)
+new_emails_info = []
+print("Các email mới đến:")
+
+while True:
