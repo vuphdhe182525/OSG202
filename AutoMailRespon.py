@@ -53,3 +53,8 @@ def send_auto_response(sender_email, response):
     msg['Subject'] = subject
     msg.set_content(body)
 
+ # Gửi email
+    with smtplib.SMTP(smtp_server, smtp_port) as server:
+        server.starttls()
+        server.login(smtp_username, smtp_password)
+        server.send_message(msg)
