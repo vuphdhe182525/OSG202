@@ -79,3 +79,6 @@ patterns = read_config(config_file)
 
 # Đếm tổng số email trong hộp thư đến ban đầu
 total_emails_initial = count_total_emails(imap_server, imap_username, imap_password)
+
+# Chờ 30 giây trước khi bắt đầu vòng lặp
+time.sleep(30)
