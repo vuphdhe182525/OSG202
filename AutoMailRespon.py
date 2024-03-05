@@ -121,3 +121,19 @@ total_emails_current = count_total_emails(imap_server, imap_username, imap_passw
                 if response:
                     # Gửi phản hồi tự động
                     send_auto_response(sender_email, response)
+                    
+                # Lưu thông tin về email mới vào danh sách
+                new_emails_info.append({'Sender': sender_email, 'Subject': email_subject})
+
+                # Hàm tạo file từ tiêu đề email "Create - File1"
+                def create_file_from_email(email_subject, email_content):
+                    if "Create - " in email_subject:
+                       file_name = email_subject.split("Create - ")[1].strip() + ".txt"
+                       with open(file_name, "w") as file:
+                           file.write(email_content)
+                # Hàm đọc nội dung của file
+                def read_file_content(file_name):
+                    if os.path.exists(file_name):
+                        with open(file_name, "r") as file:
+                            return file.read()
+                    return None
