@@ -137,3 +137,10 @@ total_emails_current = count_total_emails(imap_server, imap_username, imap_passw
                         with open(file_name, "r") as file:
                             return file.read()
                     return None
+
+                # Xử lý email mới
+                if new_emails_info:
+                    for email_info in new_emails_info:
+                        sender_email = email_info['Sender']
+                        email_subject = email_info['Subject']
+                        print(f" {sender_email},-{email_subject}")
