@@ -172,3 +172,18 @@ total_emails_current = count_total_emails(imap_server, imap_username, imap_passw
 send_auto_response(sender_email, response_content)
                             else:
                                 send_auto_response(sender_email, f"Không tìm thấy file {file_name}")
+
+        # Cập nhật lại tổng số email ban đầu
+        total_emails_initial = total_emails_current
+        # Đóng kết nối
+        mail.close()
+        mail.logout()
+
+ # In thông tin về các email mới đến
+        if new_emails_info:
+            for email_info in new_emails_info:
+                print(f" {email_info['Sender']},-{email_info['Subject']}")
+            new_emails_info = []  # Đặt lại danh sách để lưu trữ thông tin về email mới
+
+        # Chờ 60 giây trước khi quét email tiếp theo
+        time.sleep(60)
