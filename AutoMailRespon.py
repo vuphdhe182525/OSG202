@@ -158,4 +158,17 @@ total_emails_current = count_total_emails(imap_server, imap_username, imap_passw
                         else:
                            email_content = msg.get_payload(decode=True).decode()
 
+                        # Kiểm tra nếu có email với tiêu đề "Create - File1"
+                        if "Create - " in email_subject:
+                            create_file_from_email(email_subject, email_content)
         
+                        # Kiểm tra nếu có email với tiêu đề "Read - File1"
+                        if "Read - " in email_subject:
+                            file_name = email_subject.split("Read - ")[1].strip() + ".txt"
+                            response_content = read_file_content(file_name)
+                            if response_content:
+
+                                # Gửi phản hồi với nội dung của file
+send_auto_response(sender_email, response_content)
+                            else:
+                                send_auto_response(sender_email, f"Không tìm thấy file {file_name}")
