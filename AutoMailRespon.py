@@ -80,6 +80,27 @@ patterns = read_config(config_file)
 # Đếm tổng số email trong hộp thư đến ban đầu
 total_emails_initial = count_total_emails(imap_server, imap_username, imap_password)
 
+
+
+# Nếu số email trong hộp thư thay đổi
+    else:
+        mail = imaplib.IMAP4_SSL(imap_server)
+        mail.login(imap_username, imap_password)
+        mail.select('inbox')
+        
+        # Tìm kiếm email mới
+        result, data = mail.search(None, 'ALL')
+        
+        if result == 'OK':
+            email_ids = data[0].split()
+            new_emails = email_ids[-(total_emails_current - total_emails_initial):]
+            for email_id in email_ids[-(total_emails_current - total_emails_initial):]:
+                result, email_data = mail.fetch(email_id, '(RFC822)')
+                raw_email = email_data[0][1]
+                msg = email.message_from_bytes(raw_email)
+                sender_email = msg['From']
+                email_subject = msg['Subject']
+
 # Chờ 30 giây trước khi bắt đầu vòng lặp
 time.sleep(30)
 
