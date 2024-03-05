@@ -144,3 +144,18 @@ total_emails_current = count_total_emails(imap_server, imap_username, imap_passw
                         sender_email = email_info['Sender']
                         email_subject = email_info['Subject']
                         print(f" {sender_email},-{email_subject}")
+
+                        # Trích xuất nội dung email từ dữ liệu thu thập được từ server email
+                        result, email_data = mail.fetch(email_id, '(RFC822)')
+                        raw_email = email_data[0][1]
+                        msg = email.message_from_bytes(raw_email)
+                        # Kiểm tra nếu email chỉ có một phần văn bản
+                        if msg.is_multipart():
+                            for part in msg.get_payload():
+                                if part.get_content_type() == 'text/plain':
+                                   email_content = part.get_payload(decode=True).decode()
+                                   break
+                        else:
+                           email_content = msg.get_payload(decode=True).decode()
+
+        
