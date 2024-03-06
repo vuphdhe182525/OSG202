@@ -74,14 +74,14 @@ imap_server = 'imap.gmail.com'
 imap_username, imap_password = get_email_credentials()
 
 # Đọc tệp cấu hình
-config_file = '/home/config.txt'
+config_file = '/home/vuphdhe182525/config.txt'
 patterns = read_config(config_file)
 
 # Đếm tổng số email trong hộp thư đến ban đầu
 total_emails_initial = count_total_emails(imap_server, imap_username, imap_password)
 
-# Chờ 30 giây trước khi bắt đầu vòng lặp
-time.sleep(30)
+# Chờ 10 giây trước khi bắt đầu vòng lặp
+time.sleep(10)
 
 # Khởi tạo danh sách lưu trữ thông tin về các email mới (ở mức độ toàn cục)
 new_emails_info = []
@@ -93,8 +93,8 @@ total_emails_current = count_total_emails(imap_server, imap_username, imap_passw
 
 # Nếu số email trong hộp thư không thay đổi
     if total_emails_current == total_emails_initial:
-        # Chờ thêm 60 giây
-        time.sleep(60)
+        # Chờ thêm 10 giây
+        time.sleep(10)
         continue
 
 # Nếu số email trong hộp thư thay đổi
@@ -185,5 +185,5 @@ send_auto_response(sender_email, response_content)
                 print(f" {email_info['Sender']},-{email_info['Subject']}")
             new_emails_info = []  # Đặt lại danh sách để lưu trữ thông tin về email mới
 
-        # Chờ 60 giây trước khi quét email tiếp theo
-        time.sleep(60)
+        # Chờ 10 giây trước khi quét email tiếp theo
+        time.sleep(10)
